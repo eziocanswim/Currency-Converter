@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:currency_converter/utils.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -6,22 +7,28 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ColoredBox(
-        color: Color(0xFFF6F6F6),
-        child: Column(children: [
-          SizedBox(height: 80),
-          Text(
+      color: const Color(0xFFF6F6F6),
+      child: Column(
+        children: [
+          SizedBox(height: ScreenSize.screenHeight * 0.14),
+          const Text(
             "Currency Converter",
             style: TextStyle(
-                color: Color(0xFF1F2261),
-                fontWeight: FontWeight.bold,
-                fontSize: 25),
+              color: Color(0xFF1F2261),
+              fontWeight: FontWeight.bold,
+              fontSize: 25,
+            ),
           ),
-          Text(
+          const Text(
             "Convert currencies effortlessly with",
             style: TextStyle(color: Color(0xFF808080), fontSize: 15),
           ),
-          Text("real-time exchange rates at your fingertips!",
-              style: TextStyle(color: Color(0xFF808080), fontSize: 15)),
-        ]));
+          const Text(
+            "real-time exchange rates at your fingertips!",
+            style: TextStyle(color: Color(0xFF808080), fontSize: 15),
+          ),
+        ],
+      ),
+    );
   }
 }
