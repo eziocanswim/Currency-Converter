@@ -20,16 +20,54 @@ class ConverterContainer extends StatelessWidget {
           ),
         ],
       ),
-      child: const AmountBox(),
+      child: InterChanger(),
     );
   }
 }
 
-class AmountBox extends StatelessWidget {
-  const AmountBox({super.key});
+// class AmountBox extends StatelessWidget {
+//   const AmountBox({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return const Center(child: Text("HELLO/////"));
+//   }
+// }
+
+class InterChanger extends StatelessWidget {
+  const InterChanger({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text("HELLO/////"));
+    return Center(
+        child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ColoredBox(
+            color: Color(0xFF000000),
+            child: SizedBox(
+              width: ScreenSize.screenWidth * 0.32,
+              height: 1,
+            )),
+        CircleAvatar(
+          backgroundColor: Color(0xFF26278D),
+          radius: ScreenSize.screenWidth * 0.0725,
+          child: IconButton(
+              onPressed: () {
+                print("INTERCHANGED");
+              },
+              icon: Icon(
+                  color: Color(0xFFFFFFFF),
+                  Icons.swap_vert,
+                  size: ScreenSize.screenWidth * 0.1)),
+        ),
+        ColoredBox(
+            color: Color(0xFF000000),
+            child: SizedBox(
+              width: ScreenSize.screenWidth * 0.32,
+              height: 1,
+            ))
+      ],
+    ));
   }
 }
